@@ -20,7 +20,7 @@
     }
   },
   "metadata": {
-      "displayName": "SingleVirtualMachine",
+      "displayName": "Ago SingleVirtualMachine",
       "longDescription": "Create Virtual Machine with single vnic on a network label by cloning",
       "bullets": [
        {
