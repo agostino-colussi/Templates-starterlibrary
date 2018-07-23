@@ -23,7 +23,7 @@
       }
     },
     "metadata": {
-      "displayName": "Amazon EC2 Virtual Server with SSH Key - HCL",
+      "displayName": "Ago Amazon EC2 Virtual Server with SSH Key - HCL",
       "providerDisplayName": "IBM",
       "longDescription": "Use this cloud resource template to quickly provision a Ubuntu 14.04 64 bit virtual server with ssh key into an existing Virtual Private Cloud (VPC) and on an existing network.",
       "bullets": [
