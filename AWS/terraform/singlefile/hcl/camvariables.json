@@ -96,6 +96,17 @@
       ]
     },
     {
+      "name": "hostname-tag",
+      "description": "The hostname of server",
+      "default": "agostino-ec2",
+      "type": "string",
+      "required": true,
+      "secured": false,
+      "label": "hostname-tag",
+      "hidden": false,
+      "immutable": false
+    },
+    {
       "name": "vpc_name_tag",
       "label": "Virtual Private Cloud",
       "description": "Name of the Virtual Private Cloud (VPC) this resource is going to be deployed into",
