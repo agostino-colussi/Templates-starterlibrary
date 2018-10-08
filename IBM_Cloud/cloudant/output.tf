@@ -1,6 +1,6 @@
 
 output "access_urls" {
-  value = "${module.cloudant_service.access_urls}"
+  value = "${base64encode(module.cloudant_service.access_urls)}"
 }
 
 output "host" {
