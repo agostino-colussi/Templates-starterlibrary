@@ -1,140 +1,188 @@
 {
-    "input_namespaces": [],
-    "output_namespace": "",
-    "template_input_params": [
+  "input_datatypes": [ ],
+  "input_namespaces": [ ],
+  "output_namespace": "",
+  "input_groups": [
+    {
+      "name": "undefined-module.cloudant_service",
+      "label": "undefined - module.cloudant_service"
+    },
+    {
+      "name": "Unused",
+      "label": "Unused"
+    }
+  ],
+  "output_groups": [ ],
+  "template_input_params": [
+    {
+      "name": "org",
+      "label": "Organization",
+      "description": "Organization to place service under.",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "undefined-module.cloudant_service",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
+    },
+    {
+      "name": "space",
+      "label": "Space",
+      "description": "Organization space to create the service.",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "undefined-module.cloudant_service",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
+    },
+    {
+      "name": "servicename",
+      "label": "Servicename",
+      "description": "Specify the service name you want to create",
+      "type": "string",
+      "default": "cloudantNoSQLDB",
+      "validation": "",
+      "group_name": "Unused",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
+    },
+    {
+      "name": "plan",
+      "label": "Plan",
+      "description": "Cloudant Serivce Plans.",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "undefined-module.cloudant_service",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false,
+      "options": [
         {
-            "name": "region",
-            "type": "string",
-            "description": "IBM Cloud region.",
-            "hidden": false,
-            "label": "Organization",
-            "secured": false,
-            "required": true,
-            "immutable": false,
-            "options": [
-                {
-                    "value": "us-south",
-                    "label": "US South",
-                    "default": "true"
-                },
-                {
-                    "value": "us-east",
-                    "label": "US East"
-                },
-                {
-                    "value": "au-syd",
-                    "label": "Sydney"
-                },
-                {
-                    "value": "eu-de",
-                    "label": "Germany"
-                },
-                {
-                    "value": "eu-gb",
-                    "label": "United Kingdomydney"
-                }
-            ]
+          "value": "Lite",
+          "label": "Lite",
+          "default": "true"
         },
         {
-            "name": "org",
-            "type": "string",
-            "description": "Organization to place service under.",
-            "hidden": false,
-            "label": "Organization",
-            "secured": false,
-            "required": true,
-            "immutable": false
+          "value": "Standard",
+          "label": "Standard"
         },
         {
-            "name": "space",
-            "type": "string",
-            "description": "Organization space to create the service.",
-            "hidden": false,
-            "label": "Space",
-            "secured": false,
-            "required": true,
-            "immutable": false
-        },
-        {
-            "name": "plan",
-            "type": "string",
-            "description": "Cloudant Serivce Plans.",
-            "hidden": false,
-            "label": "Plan",
-            "secured": false,
-            "required": true,
-            "immutable": false,
-            "options": [
-                {
-                    "value": "Lite",
-                    "label": "Lite",
-                    "default": "true"
-                },
-                {
-                    "value": "Standard",
-                    "label": "Standard"
-                },
-                {
-                    "value": "Dedicated Hardware",
-                    "label": "Dedicated Hardware"
-                }
-            ]
+          "value": "Dedicated Hardware",
+          "label": "Dedicated Hardware"
         }
-    ],
-    "template_output_params": [
+      ]
+    },
+    {
+      "name": "region",
+      "label": "Organization",
+      "description": "IBM Cloud region.",
+      "type": "string",
+      "default": "eu-gb",
+      "validation": "",
+      "group_name": "undefined-module.cloudant_service",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false,
+      "options": [
         {
-            "name": "access_urls",
-            "label": "access_urls",
-            "description": "access_urls",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
+          "value": "us-south",
+          "label": "US South",
+          "default": "true"
         },
         {
-            "name": "host",
-            "label": "host ",
-            "description": "host",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
+          "value": "us-east",
+          "label": "US East"
         },
         {
-            "name": "port",
-            "label": "port ",
-            "description": "port",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
+          "value": "au-syd",
+          "label": "Sydney"
         },
         {
-            "name": "url",
-            "label": "url ",
-            "description": "url",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
+          "value": "eu-de",
+          "label": "Germany"
         },
         {
-            "name": "username",
-            "label": "username ",
-            "description": "username",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
-        },
-        {
-            "name": "password",
-            "label": "password ",
-            "description": "password",
-            "type": "string",
-            "hidden": false,
-            "secured": false,
-            "group_name": "output_group"
+          "value": "eu-gb",
+          "label": "United Kingdomydney"
         }
-    ]
+      ]
+    }
+  ],
+  "template_output_params": [
+    {
+      "name": "access_urls",
+      "label": "access_urls",
+      "description": "access_urls - Note: base64 encoded value",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "host",
+      "label": "host ",
+      "description": "host",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "label": "port ",
+      "description": "port",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "label": "password ",
+      "description": "password",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "label": "url ",
+      "description": "url",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "label": "username ",
+      "description": "username",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    }
+  ]
 }
