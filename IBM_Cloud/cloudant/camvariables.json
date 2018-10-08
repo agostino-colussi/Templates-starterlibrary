@@ -183,6 +183,56 @@
       "hidden": false,
       "shortname": "",
       "type": "string"
+    },
+    {
+      "name": "apikey",
+      "label": "apikey ",
+      "description": "apikey",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_description",
+      "label": "iam_apikey_description ",
+      "description": "iam_apikey_description",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_name",
+      "label": "iam_apikey_name ",
+      "description": "iam_apikey_name",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_role_crn",
+      "label": "iam_role_crn ",
+      "description": "iam_role_crn",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_serviceid_crn",
+      "label": "Iam Serviceid Crn",
+      "description": "Iam Serviceid Crn",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
     }
   ]
 }

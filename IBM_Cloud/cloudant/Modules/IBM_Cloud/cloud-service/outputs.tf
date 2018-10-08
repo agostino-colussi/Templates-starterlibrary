@@ -1,6 +1,5 @@
 output "access_urls" {
-  type ="map"
-  value = "${base64encode(ibm_service_key.serviceKey.credentials)}"
+  value = "${ibm_service_key.serviceKey.credentials}"
 }
 
 /*
