@@ -1,5 +1,5 @@
 output "access_urls" {
-  value = "${base64encode(file(lookup(ibm_service_key.serviceKey.credentials)))}"
+  value = "${base64encode(file(ibm_service_key.serviceKey.credentials))}"
 }
 
 /*
