@@ -1,6 +1,6 @@
 {
-  "name": "Agostino - Cloudant NoSQL Database",
-  "description": "Cloudant NoSQL Database in IBM Cloud - Modified by Agostino",
+  "name": "Modified - Cloudant NoSQL Database",
+  "description": "Cloudant NoSQL Database in IBM Cloud - Modified version",
   "version": "1.0",
   "type": "prebuilt",
   "manifest": {
@@ -20,7 +20,7 @@
     }
   },
     "metadata": {
-      "displayName": "Agostino - Cloudant NoSQL Database",
-      "longDescription": "Cloudant NoSQL Database - Modified by Agostino"
+      "displayName": "Modified - Cloudant NoSQL Database",
+      "longDescription": "Cloudant NoSQL Database - Modified version"
   }
 }
