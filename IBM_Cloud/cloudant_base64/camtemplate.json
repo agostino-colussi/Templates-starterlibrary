@@ -1,6 +1,6 @@
 {
-  "name": "Modified - Cloudant NoSQL Database",
-  "description": "Cloudant NoSQL Database in IBM Cloud - Modified version",
+  "name": "Cloudant NoSQL Database - Base64encode version",
+  "description": "Cloudant NoSQL Database in IBM Cloud - Base64encode version",
   "version": "1.0",
   "type": "prebuilt",
   "manifest": {
@@ -20,7 +20,7 @@
     }
   },
     "metadata": {
-      "displayName": "Modified - Cloudant NoSQL Database",
-      "longDescription": "Cloudant NoSQL Database - Modified version"
+      "displayName": "Cloudant NoSQL Database - Base64encode version",
+      "longDescription": "Cloudant NoSQL Database - Base64encode version"
   }
 }
