@@ -1,0 +1,55 @@
+{
+    "name": "WebSphere Application Deployment Template",
+    "description": "This template will deploy a WebSphere Application to an existing WebSphere Installation.",
+    "version": "1.0",
+    "imageUrl": "",
+    "image": "",
+    "type": "integration",
+    "status": "active",
+    "manifest": {
+      "template_type": "Terraform",
+      "template_format": "HCL",
+      "template_provider": "Other",
+      "template": {
+        "templateData": "",
+        "templateVariables": "",
+        "templateOutput": ""
+      },
+      "template_source": {
+        "githubRepoUrl": "",
+        "githubAccessToken": "",
+        "relativePathToTemplateFolder": "other/terraform",
+        "templateFileName": "main.tf"
+      }
+    },
+    "metadata": {
+      "displayName": "WebSphere Application Deployment Template",
+      "providerDisplayName": "Other",
+      "longDescription": "Deploy an EAR or WAR file to a target WebSphere installation. The WebSphere Installation must have a running Admin Application. Target the node and profile with the running admin application, eg, the DMGR or server1.",
+      "bullets": [{
+    "title": "Clouds",
+    "description": " All Clouds<br>"},
+{
+    "title": "Operating Systems Supported",
+    "description": "All Unix style<br>"},
+{
+    "title": "Software Deployed",
+    "description": "Nil<br>"},
+{
+    "title": "Usage and Special Notes",
+    "description": "The admin server must be running and the soap.client.props file must contain the admin credentials for WebSphere<br>"
+}
+],
+      "featuredImageUrl": "",
+      "imageUrl": "",
+      "mediumImageUrl": "",
+      "smallImageUrl": "",
+      "documentationUrl": "",
+      "termsUrl": "",
+      "media": [
+      ]
+    },
+    "toolchain": {
+      "git": "https://github.com/ibmcam/cam-toolchain"
+    }
+}
