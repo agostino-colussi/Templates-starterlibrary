@@ -8,7 +8,7 @@
           "attributes": [
              {
               "name": "host",
-              "label": "hosts",
+              "label": "host",
               "value": "${template_output_params.host}"
              },
              {
