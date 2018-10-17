@@ -1,0 +1,159 @@
+{
+  "input_datatypes": [
+    {
+      "name": "cloudant_credentials",
+      "label": "Cloudant Service credentials"
+    }
+  ],
+  "input_namespaces": [],
+  "output_namespace": "",
+  "input_groups": [
+   {
+   "name": "output_group",
+   "label": "output_group"
+   }
+  ],
+  "output_groups": [],
+  "template_input_params": [
+    {
+      "name": "vm_address",
+      "label": "vm_address ",
+      "description": "VM address",
+      "secured": false,
+      "hidden": false,
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "ssh_user",
+      "label": "ssh_user ",
+      "description": "ssh user name",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "required": false,
+      "default": "root",
+      "type": "string"
+    },
+    {
+      "name": "ssh_user_password",
+      "label": "ssh_user_password ",
+      "description": "ssh user password",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "host",
+      "label": "host ",
+      "description": "host",
+      "group_name": "output_group",
+      "secured": true,
+      "hidden": false,
+      "required": false,
+      "default": "${cloudant_credentials.host}",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "label": "port ",
+      "description": "port",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.port}",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "label": "password ",
+      "description": "password",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "label": "url ",
+      "description": "url",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.url}",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "label": "username ",
+      "description": "username",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.username}",
+      "type": "string"
+    },
+    {
+      "name": "apikey",
+      "label": "apikey ",
+      "description": "apikey",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.apikey}",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_description",
+      "label": "iam_apikey_description ",
+      "description": "iam_apikey_description",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.iam_apikey_description}",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_name",
+      "label": "iam_apikey_name ",
+      "description": "iam_apikey_name",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.iam_apikey_name}",
+      "type": "string"
+    },
+    {
+      "name": "iam_role_crn",
+      "label": "iam_role_crn ",
+      "description": "iam_role_crn",
+      "group_name": "output_group",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.iam_role_crn}",
+      "type": "string"
+    },
+    {
+      "name": "iam_serviceid_crn",
+      "label": "Iam Serviceid Crn",
+      "description": "Iam Serviceid Crn",
+      "group_name": "",
+      "secured": false,
+      "hidden": true,
+      "required": false,
+      "default": "${cloudant_credentials.iam_serviceid_crn}",
+      "type": "string"
+    } 
+  ],
+  "template_output_params": []
+}
