@@ -187,7 +187,7 @@
     {
       "name": "access_urls",
       "label": "access_urls",
-      "description": "access_urls - Note: base64 encoded value",
+      "description": "access_urls",
       "group_name": "output_group",
       "secured": false,
       "hidden": false,

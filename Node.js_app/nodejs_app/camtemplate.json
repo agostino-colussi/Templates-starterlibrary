@@ -1,5 +1,5 @@
 {
-   "name": "nodejs_app",
+   "name": "nodejs application template",
    "description": "Node.js application template",
    "type": "userCreated",
    "manifest": {
@@ -8,7 +8,7 @@
      "template_provider": "Other"
    },
    "metadata": {
-     "displayName": "nodejs_app",
+     "displayName": "nodejs application template",
      "bullets": []
    }
  }

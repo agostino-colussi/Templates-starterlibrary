@@ -25,7 +25,8 @@ resource "null_resource" "app_vm" {
 #    Clone the git repository where the Sample Node.js application code is residing (https://github.com/IBM-Cloud/nodejs-cloudant)
 #    Create vcap-local.json file that includes the value for the VCAP_SERVICES environment variable
 #    Run npm install to install the application's dependencies
-#    Run npm start to start the application
+#    Install forever tool 
+#    Start the application using forever tool
 #
 yum install git -y
 cd /tmp
