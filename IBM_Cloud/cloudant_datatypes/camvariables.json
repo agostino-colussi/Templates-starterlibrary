@@ -26,12 +26,12 @@
               "label": "url",
               "value": "${template_output_params.url}"
              },
-					   {
+	     {
               "name": "username",
               "label": "username",
               "value": "${template_output_params.username}"
              },
-					   {
+	     {
               "name": "apikey",
               "label": "apikey",
               "value": "${template_output_params.apikey}"
@@ -41,7 +41,7 @@
               "label": "iam_apikey_description",
               "value": "${template_output_params.iam_apikey_description}"
              },
-		         {
+	     {
               "name": "iam_apikey_name",
               "label": "iam_apikey_name",
               "value": "${template_output_params.iam_apikey_name}"
@@ -51,7 +51,7 @@
               "label": "iam_role_crn",
               "value": "${template_output_params.iam_role_crn}"
              },
-					   {
+	     {
               "name": "iam_serviceid_crn",
               "label": "iam_serviceid_crn",
               "value": "${template_output_params.iam_serviceid_crn}"
