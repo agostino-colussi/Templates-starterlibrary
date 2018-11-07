@@ -2,7 +2,7 @@
 # Output
 #########################################################
 output "app_name" {
-  value = "app-${random_pet.app_name.id}"
+  value = "${null_resource.credentials_vm.app_name}"
 }
 
 output "username" {

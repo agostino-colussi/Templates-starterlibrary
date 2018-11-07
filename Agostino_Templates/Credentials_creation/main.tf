@@ -31,9 +31,9 @@ resource "null_resource" "credentials_vm" {
 #
  export BLUEMIX_API_KEY=VpBEADM3vPaz148kG6xKy70wdD8LTzonPNppVleP0a5h
  ibmcloud login -a https://api.ng.bluemix.net
- ibmcloud resource service-key-create creds_for_agostino Manager --instance-name Cloudant-dr > credentials.txt
- file="./credentials.txt"
  app_name="app-${random_pet.app_name.id}"
+ ibmcloud resource service-key-create creds_for_$app_name Manager --instance-name Cloudant-dr > credentials.txt
+ file="./credentials.txt"
  username=$(grep "username:" "$file" | sed -n 's/username://p' )
  apikey=$(grep "apikey:" "$file" | sed -n 's/apikey://p' )
  host=$(grep "host:" "$file" | sed -n 's/host://p' )
