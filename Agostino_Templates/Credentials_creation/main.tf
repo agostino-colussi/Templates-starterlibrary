@@ -10,6 +10,10 @@ provider "null" {
   version = "~> 0.1"
 }
 
+# Random string to use for app_name
+resource "random_pet" "app_name" {
+}
+
 resource "null_resource" "credentials_vm" {
   connection {
     host = "${var.vm_address}"
@@ -29,6 +33,7 @@ resource "null_resource" "credentials_vm" {
  ibmcloud login -a https://api.ng.bluemix.net
  ibmcloud resource service-key-create creds_for_agostino Manager --instance-name Cloudant-dr > credentials.txt
  file="./credentials.txt"
+ app_name="app-${random_pet.app_name.id}"
  username=$(grep "username:" "$file" | sed -n 's/username://p' )
  apikey=$(grep "apikey:" "$file" | sed -n 's/apikey://p' )
  host=$(grep "host:" "$file" | sed -n 's/host://p' )

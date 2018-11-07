@@ -53,6 +53,16 @@
   ],
   "template_output_params": [
     {
+      "name": "app_name",
+      "label": "App Name",
+      "description": "App Name",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
       "name": "username",
       "label": "username",
       "description": "Cloudant service Username",
