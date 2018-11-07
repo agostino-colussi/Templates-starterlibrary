@@ -1,6 +1,11 @@
 #########################################################
 # Output
 #########################################################
+output "credentials" {
+  value = "${remote-exec.stdout}"
+}
+
+/*
 output "app_name" {
   value = "${null_resource.credentials_vm.app_name}"
 }
@@ -44,4 +49,4 @@ output "password" {
 output "port" {
   value = "${null_resource.credentials_vm.port}"
 }
-
+*/

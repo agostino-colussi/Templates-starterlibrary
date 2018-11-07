@@ -51,116 +51,14 @@
       "immutable_after_create": false
     }
   ],
-  "template_output_params": [
-    {
-      "name": "app_name",
-      "label": "App Name",
-      "description": "App Name",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "username",
-      "label": "username",
-      "description": "Cloudant service Username",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "apikey",
-      "label": "apikey",
-      "description": "Cloudant service Apikey",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "host",
-      "label": "host",
-      "description": "Cloudant service Host",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "iam_role_crn",
-      "label": "iam_role_crn",
-      "description": "Cloudant service iam_role_crn",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "iam_serviceid_crn",
-      "label": "iam_serviceid_crn",
-      "description": "Cloudant service iam_serviceid_crn",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "url",
-      "label": "url",
-      "description": "Cloudant service Url",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "iam_apikey_description",
-      "label": "iam_apikey_description",
-      "description": "Cloudant service iam_apikey_description",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "iam_apikey_name",
-      "label": "iam_apikey_name",
-      "description": "Cloudant service iam_apikey_name",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "password",
-      "label": "password",
-      "description": "Cloudant service Password",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    },
-    {
-      "name": "port",
-      "label": "port",
-      "description": "Cloudant service Port",
-      "group_name": "",
-      "secured": false,
-      "hidden": false,
-      "shortname": "",
-      "type": "string"
-    }
-  ]
+  "template_output_params": [  {
+    "name": "credentials",
+    "label": "Credentials",
+    "description": "Credentials",
+    "group_name": "",
+    "secured": false,
+    "hidden": false,
+    "shortname": "",
+    "type": "string"
+  } ]
 }
