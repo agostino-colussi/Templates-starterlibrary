@@ -1,0 +1,14 @@
+{
+   "name": "nodejs application template",
+   "description": "Node.js application template",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Other"
+   },
+   "metadata": {
+     "displayName": "nodejs application template",
+     "bullets": []
+   }
+ }

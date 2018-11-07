@@ -1,0 +1,142 @@
+{
+  "template_input_params": [
+    {
+      "name": "ip_address",
+      "type": "string",
+      "description": "IP Address of the HOST to install the APM Agent.",
+      "hidden": false,
+      "label": "IP address",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was_deploy"
+    },
+    {
+      "name": "user",
+      "type": "string",
+      "description": "Userid to install the APM Agent, root reccomended.",
+      "hidden": false,
+      "label": "Operating system user",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "root",
+      "group_name": "was_deploy"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "description": "Password of the installation user.",
+      "hidden": false,
+      "label": "Operating system password",
+      "secured": true,
+      "required": false,
+      "immutable": false,
+      "group_name": "was_deploy"
+    },
+    {
+      "name": "private_key",
+      "type": "string",
+      "description": "Private key of the installation user. This value should be base64 encoded",
+      "hidden": false,
+      "label": "Operating system private key",
+      "secured": true,
+      "required": false,
+      "immutable": false,
+      "group_name": "was_deploy"
+    },
+   {
+      "name": "was_install_profile_dir",
+      "type": "string",
+      "description": "Directory of the profile which houses the AdminApp",
+      "hidden": false,
+      "label": "was_install_profile_dir",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "/opt/IBM/WebSphere/AppServer/profiles/AppSrv01",
+      "group_name": "was_deploy"
+    },
+    {
+      "name": "was_user",
+      "type": "string",
+      "description": "The WebSphere Admin User",
+      "hidden": false,
+      "label": "was_user",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "wasadmin",
+      "group_name": "was_deploy"
+    },    
+    {
+      "name": "app_uri",
+      "type": "string",
+      "description": "URI Location of the EAR or WAR file",
+      "hidden": false,
+      "label": "app_uri",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "http://9.42.134.160:8888/WebcontainerSample.ear",
+      "group_name": "was_deploy"
+    },    
+    {
+      "name": "target_type",
+      "type": "string",
+      "description": "Target type for the deployment.",
+      "hidden": false,
+      "label": "target_type",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "options": [
+        {
+          "value": "server",
+          "label": "server",
+          "default": "true"
+        },
+        {
+          "value": "cluster",
+          "label": "cluster"
+        }
+      ],
+      "group_name": "was_deploy"
+    },    
+    {
+      "name": "node_name",
+      "type": "string",
+      "description": "Name of the node for the target server, only applicable for a server install",
+      "hidden": false,
+      "label": "node_name",
+      "secured": false,
+      "required": false,
+      "immutable": false,
+      "group_name": "was_deploy"
+    },    
+    {
+      "name": "target_name",
+      "type": "string",
+      "description": "Name of the target, eg, server1",
+      "hidden": false,
+      "label": "target_name",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "server1",
+      "group_name": "was_deploy"
+    },
+    {
+      "name": "application_name",
+      "type": "string",
+      "description": "Name of the application",
+      "hidden": false,
+      "label": "application_name",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "default": "WebcontainerSample",
+      "group_name": "was_deploy"
+    }
+  ]
+}
