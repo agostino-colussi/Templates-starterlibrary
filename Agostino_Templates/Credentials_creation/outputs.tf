@@ -2,7 +2,7 @@
 # Output
 #########################################################
 output "credentials" {
-  value = "${credentials.cloudant.credentials-content}"
+  value = "${file("credentials.txt")}"
 }
 
 /*

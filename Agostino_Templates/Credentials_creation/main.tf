@@ -80,10 +80,6 @@ resource "null_resource" "local_vm" {
    }
  }
  
- resource "credentials" "cloudant" {
-    credentials-content = "${file("credentials.txt")}"
- }
-
 
 
 
