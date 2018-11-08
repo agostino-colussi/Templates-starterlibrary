@@ -32,30 +32,31 @@ provisioner "file" {
  export BLUEMIX_API_KEY=VpBEADM3vPaz148kG6xKy70wdD8LTzonPNppVleP0a5h
  ibmcloud login -a https://api.ng.bluemix.net > /tmp/login.txt
  app_name="app-${random_pet.app_name.id}" 
- echo "app_name: " $app_name > /tmp/credential.txt
- echo " " >> /tmp/credential.txt
+ rm -f /tmp/credentials.txt
+ echo "app_name: " $app_name > /tmp/credentials.txt
+ echo " " >> /tmp/credentials.txt
  ibmcloud resource service-key-create creds_for_$app_name Manager --instance-name Cloudant-dr > credentials-tmp.txt
  file="./credentials-tmp.txt"
  username=$(grep "username:" "$file" | sed -n 's/username://p' )
- echo "username: "$username >> /tmp/credential.txt
+ echo "username: "$username >> /tmp/credentials.txt
  apikey=$(grep "apikey:" "$file" | sed -n 's/apikey://p' )
- echo "apikey: "$apikey >> /tmp/credential.txt
+ echo "apikey: "$apikey >> /tmp/credentials.txt
  host=$(grep "host:" "$file" | sed -n 's/host://p' )
- echo "host: "$host >> /tmp/credential.txt
+ echo "host: "$host >> /tmp/credentials.txt
  iam_role_crn=$(grep "iam_role_crn:" "$file" | sed -n 's/iam_role_crn://p' )
- echo "iam_role_crn: "$iam_role_crn >> /tmp/credential.txt
+ echo "iam_role_crn: "$iam_role_crn >> /tmp/credentials.txt
  iam_serviceid_crn=$(grep "iam_serviceid_crn:" "$file" | sed -n 's/iam_serviceid_crn://p' )
- echo "iam_serviceid_crn: "$iam_serviceid_crn >> /tmp/credential.txt
+ echo "iam_serviceid_crn: "$iam_serviceid_crn >> /tmp/credentials.txt
  url=$(grep "url:" "$file" | sed -n 's/url://p' )
- echo "url: "$url >> /tmp/credential.txt
+ echo "url: "$url >> /tmp/credentials.txt
  iam_apikey_description=$(grep "iam_apikey_description:" "$file" | sed -n 's/iam_apikey_description://p' )
- echo "iam_apikey_description: "$iam_apikey_description >> /tmp/credential.txt
+ echo "iam_apikey_description: "$iam_apikey_description >> /tmp/credentials.txt
  iam_apikey_name=$(grep "iam_apikey_name:" "$file" | sed -n 's/iam_apikey_name://p' )
- echo "iam_apikey_name: "$iam_apikey_name >> /tmp/credential.txt
+ echo "iam_apikey_name: "$iam_apikey_name >> /tmp/credentials.txt
  password=$(grep "password:" "$file" | sed -n 's/password://p' )
- echo "password: "$password >> /tmp/credential.txt
+ echo "password: "$password >> /tmp/credentials.txt
  port=$(grep "port:" "$file" | sed -n 's/port://p' )
- echo "port: "$port >> /tmp/credential.txt
+ echo "port: "$port >> /tmp/credentials.txt
 	EOF
     destination = "/tmp/credentials.sh"
   }
@@ -69,17 +70,19 @@ provisioner "file" {
  } 
 
 resource "null_resource" "local_vm" {
-
- provisioner "local-exec" {
+  provisioner "local-exec" {
     command = <<CMD
-      rm -rf /tmp/crendentials.txt \
+      rm -f credentials.txt \
         && apt update \
 		    && apt install sshpass \
-        && sshpass -p "${var.ssh_user_password}" scp -r ${var.ssh_user}@${var.vm_address}:/tmp/crendentials.txt crendentials.txt
+        && sshpass -p "${var.ssh_user_password}" scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt credentials.txt
     CMD
    }
  }
  
+ resource "credentials" "cloudant" {
+    credentials-content = "${file(credentials.txt)}"
+ }
 
 
 
