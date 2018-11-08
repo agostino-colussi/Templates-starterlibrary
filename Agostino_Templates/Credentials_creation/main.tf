@@ -30,7 +30,7 @@ provisioner "file" {
 #    Gather the ten credential's variables
 #
  export BLUEMIX_API_KEY=VpBEADM3vPaz148kG6xKy70wdD8LTzonPNppVleP0a5h
- ibmcloud login -a https://api.ng.bluemix.net > /tmp/login.txt
+ ibmcloud login -a https://api.ng.bluemix.net 
  app_name="app-${random_pet.app_name.id}" 
  rm -f /tmp/credentials.txt
  echo "app_name: " $app_name > /tmp/credentials.txt
@@ -72,10 +72,10 @@ provisioner "file" {
 resource "null_resource" "local_vm" {
   provisioner "local-exec" {
     command = <<CMD
-      rm -f credentials.txt \
+      rm -f /tmp/credentials.txt \
         && apt update \
 		    && apt install sshpass \
-        && sshpass -p "${var.ssh_user_password}" scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt credentials.txt
+        && sshpass -p ${var.ssh_user_password} scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt /tmp/credentials.txt
     CMD
    }
  }
