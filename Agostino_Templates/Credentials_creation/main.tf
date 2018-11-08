@@ -75,7 +75,7 @@ resource "null_resource" "local_vm" {
       rm -rf /tmp/crendentials.txt \
         && apt update \
 		    && apt install sshpass \
-        && sshpass -p "${var.ssh_user_password}" scp -r ${var.ssh_user}@${var.vm_address}:/tmp/crendentials.txt /tmp/crendentials.txt
+        && sshpass -p "${var.ssh_user_password}" scp -r ${var.ssh_user}@${var.vm_address}:/tmp/crendentials.txt crendentials.txt
     CMD
    }
  }

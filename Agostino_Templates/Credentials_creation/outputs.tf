@@ -2,7 +2,7 @@
 # Output
 #########################################################
 output "credentials" {
-  value = "${file(/tmp/credentials.txt)}"
+  value = "${file(credentials.txt)}"
 }
 
 /*
