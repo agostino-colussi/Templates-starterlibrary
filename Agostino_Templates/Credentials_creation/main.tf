@@ -70,12 +70,10 @@ provisioner "file" {
  } 
 
 resource "null_resource" "local_vm" {
+  depends_on = ["null_resource.credentials_vm"]
   provisioner "local-exec" {
     command = <<CMD
-      rm -f /tmp/credentials.txt \
-        && apt update \
-		    && apt install sshpass \
-        && sshpass -p ${var.ssh_user_password} scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt /tmp/credentials.txt
+      rm -f /tmp/credentials.txt && apt update && apt install sshpass && sshpass -p ${var.ssh_user_password} scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt /tmp/credentials.txt
     CMD
    }
  }
