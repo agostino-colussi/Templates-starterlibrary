@@ -2,7 +2,7 @@
 # Output
 #########################################################
 output "credentials" {
-  value = "${remote-exec.stdout}"
+  value = "${file(/tmp/credentials.txt)}"
 }
 
 /*
