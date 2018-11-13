@@ -33,7 +33,7 @@ provisioner "file" {
  ibmcloud login -a https://api.ng.bluemix.net 
  app_name="app-${random_pet.app_name.id}" 
  rm -f /tmp/credentials.txt
- echo "app_name: " $app_name > /tmp/credentials.txt
+ echo "Credentials for app_name: " $app_name > /tmp/credentials.txt
  echo " " >> /tmp/credentials.txt
  ibmcloud resource service-key-create creds_for_$app_name Manager --instance-name Cloudant-dr > credentials-tmp.txt
  file="./credentials-tmp.txt"
@@ -57,7 +57,7 @@ provisioner "file" {
  echo "password: "$password >> /tmp/credentials.txt
  port=$(grep "port:" "$file" | sed -n 's/port://p' )
  echo "port: "$port >> /tmp/credentials.txt
-	EOF
+ EOF
     destination = "/tmp/credentials.sh"
   }
   
@@ -69,14 +69,6 @@ provisioner "file" {
 
  } 
 
-resource "null_resource" "local_vm" {
-  depends_on = ["null_resource.credentials_vm"]
-  provisioner "local-exec" {
-    command = <<CMD
-      rm -f /tmp/credentials.txt && apt update && apt install sshpass && sshpass -p ${var.ssh_user_password} scp -r ${var.ssh_user}@${var.vm_address}:/tmp/credentials.txt /tmp/credentials.txt
-    CMD
-   }
- }
  
 
 
