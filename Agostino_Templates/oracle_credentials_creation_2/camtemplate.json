@@ -1,0 +1,14 @@
+{
+   "name": "Oracle credentials creation v2",
+   "description": "Oracle credentials creation v2",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Other"
+   },
+   "metadata": {
+     "displayName": "Oracle credentials creation",
+     "bullets": []
+   }
+ }
