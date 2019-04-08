@@ -208,5 +208,14 @@
       "immutable_after_create": false
     }
   ],
-  "template_output_params": [ ]
+  "template_output_params": [  {
+    "name": "public_ip",
+    "label": "Public Ip",
+    "description": "Public Ip",
+    "group_name": "",
+    "secured": false,
+    "hidden": false,
+    "shortname": "",
+    "type": "string"
+  } ]
 }
