@@ -24,8 +24,8 @@ resource "null_resource" "app_vm" {
 #    
 #
 cd /tmp
-md test_json
-cd ./test.json
+mkdir test_json
+cd ./test_json
 touch vcap-local.json
 chown root:root vcap-local.json
 chmod 755 vcap-local.json
