@@ -1,8 +1,5 @@
 {
-  "input_datatypes": [  {
-    "name": "cloudant_credentials",
-    "label": "Cloudant Service credentials"
-  } ],
+  "input_datatypes": [ ],
   "input_namespaces": [ ],
   "output_namespace": "",
   "input_groups": [  {
