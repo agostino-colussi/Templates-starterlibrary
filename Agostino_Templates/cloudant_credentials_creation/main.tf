@@ -45,11 +45,17 @@ ibmcloud service key-delete ${var.service_name} ${var.service_credentials_name}
 resource "camc_scriptpackage" "CreateScript" {
   program = ["/bin/bash", "/tmp/create_credentials.sh"]
   depends_on = ["null_resource.ibmcli_vm"]
+  remote_host = "${var.vm_address}"
+  remote_user = "${var.ssh_user}"
+  remote_password = "${var.ssh_user_password}"
   on_create = true
 }
 
 resource "camc_scriptpackage" "DestroyScript" {
   program = ["/bin/bash", "/tmp/delete_credentials.sh"]
   depends_on = ["null_resource.ibmcli_vm"]
+  remote_host = "${var.vm_address}"
+  remote_user = "${var.ssh_user}"
+  remote_password = "${var.ssh_user_password}"
   on_delete = true
 } 
