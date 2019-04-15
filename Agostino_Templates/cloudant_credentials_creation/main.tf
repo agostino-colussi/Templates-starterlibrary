@@ -25,7 +25,7 @@ ibmcloud login -a https://cloud.ibm.com -r us-south
 ibmcloud service key-create ${var.service_name} ${var.service_credentials_name}
 script_output=$(ibmcloud service key-show ${var.service_name} ${var.service_credentials_name})
 	EOF
-    destination = "/tmp/create_credentials.sh"
+    destination = "chmod +x /tmp/create_credentials.sh"
   }
   
 provisioner "file" {
@@ -37,19 +37,19 @@ export BLUEMIX_API_KEY=${var.bluemix_key}
 ibmcloud login -a https://cloud.ibm.com -r us-south
 ibmcloud service key-delete ${var.service_name} ${var.service_credentials_name}
 	EOF
-    destination = "/tmp/delete_credentials.sh"
+    destination = "chmod +x /tmp/delete_credentials.sh"
   }
  
  }
  
 resource "camc_scriptpackage" "CreateScript" {
-  program = ["/bin/bash", "chmod +x /tmp/create_credentials.sh"]
+  program = ["/bin/bash", "/tmp/create_credentials.sh"]
   depends_on = ["null_resource.ibmcli_vm"]
   on_create = true
 }
 
 resource "camc_scriptpackage" "DestroyScript" {
-  program = ["/bin/bash", "chmod +x /tmp/delete_credentials.sh"]
+  program = ["/bin/bash", "/tmp/delete_credentials.sh"]
   depends_on = ["null_resource.ibmcli_vm"]
   on_delete = true
 } 
