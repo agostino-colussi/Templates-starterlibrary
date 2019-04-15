@@ -21,10 +21,12 @@ provisioner "file" {
 #!/bin/bash
 #
 export BLUEMIX_API_KEY=${var.bluemix_key}
+ibmcloud config --check-version=false
 ibmcloud login -a https://cloud.ibm.com -r us-south
+ibmcloud target --cf-api https://api.us-south.cf.cloud.ibm.com -o agostino.colussi -s Test
 ibmcloud service key-create ${var.service_name} ${var.service_credentials_name}
-script_output=$(ibmcloud service key-show ${var.service_name} ${var.service_credentials_name})
-	EOF
+ibmcloud service key-show ${var.service_name} ${var.service_credentials_name}
+EOF
     destination = "/tmp/create_credentials.sh"
   }
   
@@ -34,9 +36,11 @@ provisioner "file" {
 #!/bin/bash
 #
 export BLUEMIX_API_KEY=${var.bluemix_key}
+ibmcloud config --check-version=false
 ibmcloud login -a https://cloud.ibm.com -r us-south
-ibmcloud service key-delete ${var.service_name} ${var.service_credentials_name}
-	EOF
+ibmcloud target --cf-api https://api.us-south.cf.cloud.ibm.com -o agostino.colussi -s Test
+ibmcloud service key-delete ${var.service_name} ${var.service_credentials_name} -f
+EOF
     destination = "/tmp/delete_credentials.sh"
   }
  
