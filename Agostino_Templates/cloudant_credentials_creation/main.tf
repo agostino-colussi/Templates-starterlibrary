@@ -31,12 +31,11 @@ EOF
   }
   
 provisioner "file" {
-    when ="destroy"
     content = <<EOF
 #!/bin/bash
 #
 export BLUEMIX_API_KEY=${var.bluemix_key}
-ibmcloud config --check-version=false
+ibmcloud config --check-version=false >> /tmp/create_cloudant_credentials.log 2>&1
 ibmcloud login -a https://cloud.ibm.com -r us-south >> /tmp/create_cloudant_credentials.log 2>&1
 ibmcloud target --cf-api https://api.us-south.cf.cloud.ibm.com -o agostino.colussi -s Test >> /tmp/create_cloudant_credentials.log 2>&1
 ibmcloud service key-delete ${var.service_name} ${var.service_credentials_name} -f >> /tmp/create_cloudant_credentials.log 2>&1
