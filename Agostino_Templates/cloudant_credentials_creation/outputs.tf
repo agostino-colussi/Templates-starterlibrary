@@ -5,5 +5,5 @@
 #####################################################################
 
 output "remote_script_stdout" {
-  value = "${camc_scriptpackage.CreateScript.stdout}"
+  value = "${camc_scriptpackage.CreateScript.result}"
 }
