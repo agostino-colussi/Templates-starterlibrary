@@ -1,0 +1,14 @@
+{
+   "name": "Test json passing",
+   "description": "Test json passing as input parameter",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Other"
+   },
+   "metadata": {
+     "displayName": "Test json passing",
+     "bullets": []
+   }
+ }
