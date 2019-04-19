@@ -1,5 +1,5 @@
 {
-   "name": "Test json passing",
+   "name": "Test json passing v2",
    "description": "Test json passing as input parameter",
    "type": "userCreated",
    "manifest": {
@@ -8,7 +8,7 @@
      "template_provider": "Other"
    },
    "metadata": {
-     "displayName": "Test json passing",
+     "displayName": "Test json passing v2",
      "bullets": []
    }
  }
