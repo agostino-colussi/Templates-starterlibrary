@@ -93,14 +93,26 @@
       "immutable_after_create": false
     }
   ],
-  "template_output_params": [  {
-    "name": "remote_script_stdout",
-    "label": "Remote Script Stdout",
-    "description": "Remote Script Stdout",
-    "group_name": "",
-    "secured": false,
-    "hidden": false,
-    "shortname": "",
-    "type": "string"
-  } ]
+  "template_output_params": [
+    {
+      "name": "remote_script_stdout",
+      "label": "Remote Script Stdout",
+      "description": "Remote Script Stdout",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "apikey",
+      "label": "Apikey",
+      "description": "Apikey",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    }
+  ]
 }
