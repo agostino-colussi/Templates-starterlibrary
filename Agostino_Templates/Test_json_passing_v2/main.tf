@@ -24,6 +24,7 @@ resource "null_resource" "app_vm" {
 #    
 #
 cd /tmp
+rm -fr test_json
 mkdir test_json
 cd ./test_json
 touch vcap-local.json
@@ -31,7 +32,7 @@ chown root:root vcap-local.json
 chmod 755 vcap-local.json
 row="${ length(var.cloudant_cred) > 0 ? base64decode(var.cloudant_cred) : var.cloudant_cred}"
 echo "$row" >> vcap-local.json
-	EOF
+EOF
     destination = "/tmp/create_json.sh"
   }
   
