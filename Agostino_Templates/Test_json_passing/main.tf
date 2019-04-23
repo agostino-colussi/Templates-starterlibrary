@@ -30,7 +30,7 @@ cd ./test_json
 touch vcap-local.json
 chown root:root vcap-local.json
 chmod 755 vcap-local.json
-row="${var.cloudant_cred}"
+row='${var.cloudant_cred}'
 echo "$row" >> vcap-local.json
 EOF
     destination = "/tmp/create_json.sh"
