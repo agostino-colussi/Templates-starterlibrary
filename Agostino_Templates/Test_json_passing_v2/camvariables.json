@@ -57,7 +57,7 @@
       "type": "string",
       "default": "",
       "validation": "",
-      "group_name": "",
+      "group_name": "input_group",
       "required": true,
       "secured": false,
       "hidden": false,
