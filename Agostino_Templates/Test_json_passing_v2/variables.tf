@@ -18,7 +18,7 @@ variable "ssh_user_password" {
 }
 
 variable "cloudant_cred" {
-  value = "${base64encode(cloudant_cred)}"
+  value = "${base64encode(var.cloudant_cred)}"
   description = "cloudant credentials"
 }
 
