@@ -37,7 +37,8 @@ port_var=$(echo $com_response | awk 'match($0,"{"){print substr($0,RSTART)}' | j
 url_var=$(echo $com_response | awk 'match($0,"{"){print substr($0,RSTART)}' | jq '.url')
 username_var=$(echo $com_response | awk 'match($0,"{"){print substr($0,RSTART)}' | jq '.username')
 
-return_result="{\"apikey\": ${apikey_var}, \"host\": \"${host_var}\", \"iam_apikey_description\": \"${iam_apikey_description_var}\", \"iam_apikey_name\": \"${iam_apikey_name_var}\", \"iam_serviceid_crn\": \"${iam_serviceid_crn_var}\", \"password\": \"${password_var}\", \"port\": \"${port_var}\", \"url\": \"${url_var}\", \"username\": \"${username_var}\"}"
+return_result="{\"apikey\": ${apikey_var}, \"host\": ${host_var}, \"iam_apikey_description\": ${iam_apikey_description_var}, \"iam_apikey_name\": ${iam_apikey_name_var}, \"iam_serviceid_crn\": ${iam_serviceid_crn_var}, \"password\": ${password_var}, \"port\": ${port_var}, \"url\": ${url_var}, \"username\": ${username_var}}"
+echo $return_result
 EOF
     destination = "/tmp/create_credentials.sh"
   }
