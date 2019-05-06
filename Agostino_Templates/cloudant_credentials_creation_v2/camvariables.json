@@ -95,9 +95,9 @@
   ],
   "template_output_params": [
     {
-      "name": "remote_script_stdout",
-      "label": "Remote Script Stdout",
-      "description": "Remote Script Stdout",
+      "name": "cloudant_credentials",
+      "label": "Cloudant Credentials",
+      "description": "Cloudant Credentials",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -108,6 +108,86 @@
       "name": "apikey",
       "label": "Apikey",
       "description": "Apikey",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "host",
+      "label": "Host",
+      "description": "Host",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_description",
+      "label": "Iam Apikey Description",
+      "description": "Iam Apikey Description",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_apikey_name",
+      "label": "Iam Apikey Name",
+      "description": "Iam Apikey Name",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "iam_serviceid_crn",
+      "label": "Iam Serviceid Crn",
+      "description": "Iam Serviceid Crn",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "label": "Password",
+      "description": "Password",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "port",
+      "label": "Port",
+      "description": "Port",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "label": "Url",
+      "description": "Url",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "label": "Username",
+      "description": "Username",
       "group_name": "",
       "secured": false,
       "hidden": false,
