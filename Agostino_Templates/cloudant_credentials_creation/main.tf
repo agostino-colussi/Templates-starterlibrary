@@ -27,7 +27,7 @@ ibmcloud target --cf-api https://api.us-south.cf.cloud.ibm.com -o agostino.colus
 ibmcloud service key-create ${var.service_name} ${var.service_credentials_name} >> /tmp/create_cloudant_credentials.log 2>&1
 com_response=$(ibmcloud service key-show ${var.service_name} ${var.service_credentials_name})
 #com_output=$(echo $com_response | awk 'match($0,"{"){print substr($0,RSTART)}')
-echo $com_output
+echo $com_response
 EOF
     destination = "/tmp/create_credentials.sh"
   }
