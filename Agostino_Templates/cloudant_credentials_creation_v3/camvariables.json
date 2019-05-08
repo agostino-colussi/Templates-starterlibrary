@@ -99,7 +99,7 @@
     {
       "name": "bluemix_key",
       "label": "Bluemix Key",
-      "description": "The user password for ssh connection, which is default in template",
+      "description": "The IBM Cloud key to access Cloud",
       "type": "string",
       "validation": "",
       "group_name": "",
@@ -140,7 +140,7 @@
     {
       "name": "apikey",
       "label": "apikey",
-      "description": "Apikey",
+      "description": "apikey",
       "group_name": "",
       "secured": true,
       "hidden": false,
