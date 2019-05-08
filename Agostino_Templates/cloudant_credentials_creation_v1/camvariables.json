@@ -1,51 +1,5 @@
 {
   "input_datatypes": [ ],
-  "output_datatypes": [
-    {
-      "name": "Cloudant",
-      "dataobject": {
-        "name":"Cloudant-${template_input_params.service_credentials_name}",
-        "attributes":[
-            {
-                "name": "apikey",
-                "value": "${template_output_params.apikey}"
-            },
-            {
-                "name": "host",
-                "value": "${template_output_params.host}"
-            },
-            {
-                "name": "iam_apikey_description",
-                "value": "${template_output_params.iam_apikey_description}"
-            },
-            {
-                "name": "iam_apikey_name",
-                "value": "${template_output_params.iam_apikey_name}"
-            },
-            {
-                "name": "iam_serviceid_crn",
-                "value": "${template_output_params.iam_serviceid_crn}"
-            },
-            {
-                "name": "password",
-                "value": "${template_output_params.password}"
-            },
-            {
-                "name": "port",
-                "value": "${template_output_params.port}"
-            },
-            {
-                "name": "url",
-                "value": "${template_output_params.url}"
-            },
-            {
-                "name": "username",
-                "value": "${template_output_params.username}"
-            }          
-        ]
-    }
-  }
-  ],
   "input_namespaces": [ ],
   "output_namespace": "",
   "input_groups": [  {
@@ -99,8 +53,9 @@
     {
       "name": "bluemix_key",
       "label": "Bluemix Key",
-      "description": "The IBM Cloud key to access Cloud",
+      "description": "The user password for ssh connection, which is default in template",
       "type": "string",
+      "default": "",
       "validation": "",
       "group_name": "",
       "required": true,
@@ -114,6 +69,7 @@
       "label": "Service Name",
       "description": "Cloudant service name",
       "type": "string",
+      "default": "",
       "validation": "",
       "group_name": "",
       "required": true,
@@ -127,6 +83,7 @@
       "label": "Service Credentials Name",
       "description": "The Service Key name",
       "type": "string",
+      "default": "",
       "validation": "",
       "group_name": "",
       "required": true,
@@ -138,19 +95,29 @@
   ],
   "template_output_params": [
     {
-      "name": "apikey",
-      "label": "apikey",
-      "description": "apikey",
+      "name": "cloudant_credentials",
+      "label": "Cloudant Credentials",
+      "description": "Cloudant Credentials",
       "group_name": "",
-      "secured": true,
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
+      "name": "apikey",
+      "label": "Apikey",
+      "description": "Apikey",
+      "group_name": "",
+      "secured": false,
       "hidden": false,
       "shortname": "",
       "type": "string"
     },
     {
       "name": "host",
-      "label": "host",
-      "description": "host",
+      "label": "Host",
+      "description": "Host",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -159,8 +126,8 @@
     },
     {
       "name": "iam_apikey_description",
-      "label": "iam_apikey_description",
-      "description": "iam_apikey_description",
+      "label": "Iam Apikey Description",
+      "description": "Iam Apikey Description",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -169,8 +136,8 @@
     },
     {
       "name": "iam_apikey_name",
-      "label": "iam_apikey_name",
-      "description": "iam_apikey_name",
+      "label": "Iam Apikey Name",
+      "description": "Iam Apikey Name",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -179,8 +146,8 @@
     },
     {
       "name": "iam_serviceid_crn",
-      "label": "iam_serviceid_crn",
-      "description": "iam_serviceid_crn",
+      "label": "Iam Serviceid Crn",
+      "description": "Iam Serviceid Crn",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -189,18 +156,18 @@
     },
     {
       "name": "password",
-      "label": "password",
-      "description": "password",
+      "label": "Password",
+      "description": "Password",
       "group_name": "",
-      "secured": true,
+      "secured": false,
       "hidden": false,
       "shortname": "",
       "type": "string"
     },
     {
       "name": "port",
-      "label": "port",
-      "description": "port",
+      "label": "Port",
+      "description": "Port",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -209,8 +176,8 @@
     },
     {
       "name": "url",
-      "label": "url",
-      "description": "url",
+      "label": "Url",
+      "description": "Url",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -219,14 +186,13 @@
     },
     {
       "name": "username",
-      "label": "username",
-      "description": "username",
+      "label": "Username",
+      "description": "Username",
       "group_name": "",
       "secured": false,
       "hidden": false,
       "shortname": "",
       "type": "string"
     }
-
   ]
 }

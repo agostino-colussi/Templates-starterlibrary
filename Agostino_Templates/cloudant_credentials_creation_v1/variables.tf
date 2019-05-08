@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## Created 5/7/19 by Ago/Radu for IBM Cloudant_credentials_creation
+##      Created 4/9/19 by Ago for IBM Cloudant_credentials_creation
 ##
 #####################################################################
 
@@ -19,7 +19,7 @@ variable "ssh_user_password" {
 }
 
 variable "bluemix_key" {
-  description = "The IBM Cloud key to access Cloud"
+  description = "The user password for ssh connection, which is default in template"
 }
 
 variable "service_name" {

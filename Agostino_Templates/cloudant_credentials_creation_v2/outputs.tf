@@ -1,46 +1,42 @@
 #####################################################################
 ##
-##      Created 4/9/19 by Ago for IBM Cloudant_credentials_creation
+## Created 5/7/19 by Ago/Radu for IBM Cloudant_credentials_creation
 ##
 #####################################################################
 
-output "cloudant_credentials" {
-  value = "${camc_scriptpackage.CreateScript.result}"
+output "apikey" {
+  value = "${camc_scriptpackage.apikey.result["stdout"]}"
 }
 
-output "apikey" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "apikey")}"
-}
-  
 output "host" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "host")}"
+  value = "${camc_scriptpackage.host.result["stdout"]}"
 }
-  
+
 output "iam_apikey_description" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "iam_apikey_description")}"
+  value = "${camc_scriptpackage.iam_apikey_description.result["stdout"]}"
 }
-  
+
 output "iam_apikey_name" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "iam_apikey_name")}"
+  value = "${camc_scriptpackage.iam_apikey_name.result["stdout"]}"
 }
-  
+
 output "iam_serviceid_crn" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "iam_serviceid_crn")}"
+  value = "${camc_scriptpackage.iam_serviceid_crn.result["stdout"]}"
 }
-  
+
 output "password" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "password")}"
+  value = "${camc_scriptpackage.password.result["stdout"]}"
 }
-  
+
 output "port" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "port")}"
+  value = "${camc_scriptpackage.port.result["stdout"]}"
 }
-  
+
 output "url" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "url")}"
+  value = "${camc_scriptpackage.url.result["stdout"]}"
 }
-  
+
 output "username" {
-  value = "${lookup(camc_scriptpackage.CreateScript.result, "username")}"
-} 
+  value = "${camc_scriptpackage.username.result["stdout"]}"
+}
 
