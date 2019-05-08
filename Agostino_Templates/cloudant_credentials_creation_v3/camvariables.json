@@ -2,7 +2,7 @@
   "input_datatypes": [ ],
   "output_datatypes": [
     {
-      "name": "cloudant",
+      "name": "Cloudant",
       "dataobject": {
         "name":"Cloudant-${template_input_params.service_credentials_name}",
         "attributes":[
