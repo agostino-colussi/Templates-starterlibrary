@@ -1,0 +1,160 @@
+{
+    "input_namespaces": [],
+    "output_namespace": "",
+    "template_input_params": [
+        {
+            "name": "servicename",
+            "type": "string",
+            "description": "Specify the service name you want to create",
+            "hidden": false,
+            "label": "Service Name",
+            "default": "cloudantNoSQLDB",
+            "secured": false,
+            "required": true,
+            "immutable": false
+        },
+        {
+            "name": "plan",
+            "type": "string",
+            "description": "Serivce Plan",
+            "hidden": false,
+            "label": "Service Plan",
+            "secured": false,
+            "required": true,
+            "immutable": false,
+            "options": [
+                {
+                    "value": "Lite",
+                    "label": "Lite",
+                    "default": "true"
+                },
+                {
+                    "value": "Standard",
+                    "label": "Standard"
+                },
+                {
+                    "value": "Dedicated Hardware",
+                    "label": "Dedicated Hardware"
+                }
+            ]
+        },
+        {
+            "name": "org",
+            "type": "string",
+            "description": "Organization to place service under.",
+            "hidden": false,
+            "label": "Organization",
+            "secured": false,
+            "required": true,
+            "immutable": false
+        },
+        {
+            "name": "space",
+            "type": "string",
+            "description": "Organization space to create the service.",
+            "hidden": false,
+            "label": "Space",
+            "secured": false,
+            "required": true,
+            "immutable": false
+        },
+        {
+            "name": "region",
+            "type": "string",
+            "description": "IBM Cloud region.",
+            "hidden": false,
+            "label": "Region",
+            "secured": false,
+            "required": true,
+            "immutable": false,
+            "options": [
+                {
+                    "value": "us-south",
+                    "label": "US South",
+                    "default": "true"
+                },
+                {
+                    "value": "us-east",
+                    "label": "US East"
+                },
+                {
+                    "value": "au-syd",
+                    "label": "Sydney"
+                },
+                {
+                    "value": "eu-de",
+                    "label": "Germany"
+                },
+                {
+                    "value": "eu-gb",
+                    "label": "United Kingdom"
+                }
+            ]
+        }
+    ],
+    "template_output_params": [
+        {
+            "name": "access_urls",
+            "label": "access_urls",
+            "description": "access_urls",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "service_instance_name",
+            "label": "service_instance_name",
+            "description": "service_instance_name",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "host",
+            "label": "host ",
+            "description": "host",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "port",
+            "label": "port ",
+            "description": "port",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "url",
+            "label": "url ",
+            "description": "url",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "username",
+            "label": "username ",
+            "description": "username",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        },
+        {
+            "name": "password",
+            "label": "password ",
+            "description": "password",
+            "type": "string",
+            "hidden": false,
+            "secured": false,
+            "group_name": "output_group"
+        }
+    ]
+}
