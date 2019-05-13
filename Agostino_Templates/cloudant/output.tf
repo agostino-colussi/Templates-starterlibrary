@@ -3,7 +3,7 @@ output "access_urls" {
   value = "${module.cloudant_service.access_urls}"
 }
 output "service_instance_name" {
-  value = "${module.cloudant_service.ibm_service_instance.service.name}"
+  value = "${module.cloudant_service.service_instance_name}"
 }
 output "host" {
   value = "${module.cloudant_service.access_urls["host"]}"
