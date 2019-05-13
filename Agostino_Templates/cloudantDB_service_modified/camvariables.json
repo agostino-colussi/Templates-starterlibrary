@@ -1,65 +1,5 @@
 {
   "input_datatypes": [ ],
-  "output_datatypes": [ 
-    {
-      "name": "cloudant_credentials",
-      "dataobject": {
-          "name":"${template_input_params.servicename}",
-          "attributes": [
-             {
-              "name": "host",
-              "label": "host",
-              "value": "${template_output_params.host}"
-             },
-             {
-              "name": "port",
-              "label": "port",
-              "value": "${template_output_params.port}"
-             },
-             {
-              "name": "password",
-              "label": "password",
-              "value": "${template_output_params.password}"
-             },
-             {
-              "name": "url",
-              "label": "url",
-              "value": "${template_output_params.url}"
-             },
-	     {
-              "name": "username",
-              "label": "username",
-              "value": "${template_output_params.username}"
-             },
-	     {
-              "name": "apikey",
-              "label": "apikey",
-              "value": "${template_output_params.apikey}"
-             },
-             {
-              "name": "iam_apikey_description",
-              "label": "iam_apikey_description",
-              "value": "${template_output_params.iam_apikey_description}"
-             },
-	     {
-              "name": "iam_apikey_name",
-              "label": "iam_apikey_name",
-              "value": "${template_output_params.iam_apikey_name}"
-             },
-             {
-              "name": "iam_role_crn",
-              "label": "iam_role_crn",
-              "value": "${template_output_params.iam_role_crn}"
-             },
-	     {
-              "name": "iam_serviceid_crn",
-              "label": "iam_serviceid_crn",
-              "value": "${template_output_params.iam_serviceid_crn}"
-             }
-           ]
-         }
-     }
-  ],
   "input_namespaces": [ ],
   "output_namespace": "",
   "input_groups": [
@@ -187,7 +127,7 @@
     {
       "name": "access_urls",
       "label": "access_urls",
-      "description": "access_urls",
+      "description": "access_urls - Note: base64 encoded value",
       "group_name": "output_group",
       "secured": false,
       "hidden": false,
@@ -195,8 +135,18 @@
       "type": "string"
     },
     {
+      "name": "service_instance_name",
+      "label": "Service Instance Name",
+      "description": "Service Instance Name",
+      "group_name": "",
+      "secured": false,
+      "hidden": false,
+      "shortname": "",
+      "type": "string"
+    },
+    {
       "name": "host",
-      "label": "host",
+      "label": "host ",
       "description": "host",
       "group_name": "output_group",
       "secured": false,
@@ -206,7 +156,7 @@
     },
     {
       "name": "port",
-      "label": "port",
+      "label": "port ",
       "description": "port",
       "group_name": "output_group",
       "secured": false,
@@ -226,7 +176,7 @@
     },
     {
       "name": "url",
-      "label": "url",
+      "label": "url ",
       "description": "url",
       "group_name": "output_group",
       "secured": false,
@@ -236,7 +186,7 @@
     },
     {
       "name": "username",
-      "label": "username",
+      "label": "username ",
       "description": "username",
       "group_name": "output_group",
       "secured": false,
@@ -246,7 +196,7 @@
     },
     {
       "name": "apikey",
-      "label": "apikey",
+      "label": "apikey ",
       "description": "apikey",
       "group_name": "output_group",
       "secured": false,
@@ -256,7 +206,7 @@
     },
     {
       "name": "iam_apikey_description",
-      "label": "iam_apikey_description",
+      "label": "iam_apikey_description ",
       "description": "iam_apikey_description",
       "group_name": "output_group",
       "secured": false,
@@ -266,7 +216,7 @@
     },
     {
       "name": "iam_apikey_name",
-      "label": "iam_apikey_name",
+      "label": "iam_apikey_name ",
       "description": "iam_apikey_name",
       "group_name": "output_group",
       "secured": false,
@@ -276,7 +226,7 @@
     },
     {
       "name": "iam_role_crn",
-      "label": "iam_role_crn",
+      "label": "iam_role_crn ",
       "description": "iam_role_crn",
       "group_name": "output_group",
       "secured": false,
@@ -286,9 +236,9 @@
     },
     {
       "name": "iam_serviceid_crn",
-      "label": "iam_serviceid_crn",
-      "description": "iam_serviceid_crn",
-      "group_name": "output_group",
+      "label": "Iam Serviceid Crn",
+      "description": "Iam Serviceid Crn",
+      "group_name": "",
       "secured": false,
       "hidden": false,
       "shortname": "",
