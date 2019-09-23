@@ -1,0 +1,110 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "Copy of Send mail with input parms",
+      "description": "Sample test for send a mail.",
+      "image": "serviceicon_1.svg",
+      "category": "CloudServices",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "Sample test for send a mail.",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "admin"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [
+          {
+            "name": "to",
+            "label": "To",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "Mail Receiver",
+            "default": ""
+          },
+          {
+            "name": "cc",
+            "label": "CC",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": false,
+            "secured": false,
+            "description": "CC"
+          },
+          {
+            "name": "subject",
+            "label": "Subject",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "Subject"
+          },
+          {
+            "name": "message",
+            "label": "Message",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "Message"
+          }
+        ],
+        "flow": {
+          "conditions": [],
+          "templates": [],
+          "resthooks": [],
+          "notifications": [
+            {
+              "emailnotification": {
+                "title": "emailnotification_5d57de",
+                "type": "email",
+                "receiverList": "${input_parameters.to}",
+                "id": "emailnot611c76b5",
+                "sender": "CAMadmin",
+                "copyToList": "${input_parameters.cc}",
+                "subject": "${input_parameters.subject}",
+                "body": "${input_parameters.message}",
+                "warning": false,
+                "error": false
+              }
+            }
+          ],
+          "sequence": {
+            "0": "emailnot611c76b5"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}

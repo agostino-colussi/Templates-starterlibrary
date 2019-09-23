@@ -1,0 +1,64 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "Send Mail using Shared Parameters",
+      "description": "Sample test for send a mail.",
+      "image": "serviceicon_1.svg",
+      "category": "CloudServices",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "Sample test for send a mail.",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "admin"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [],
+        "flow": {
+          "conditions": [],
+          "templates": [],
+          "resthooks": [],
+          "notifications": [
+            {
+              "emailnotification": {
+                "title": "emailnotification_5d57de",
+                "type": "email",
+                "receiverList": "${datatypes.mail_receiver.mail_receiver}",
+                "id": "emailnot611c76b5",
+                "sender": "CAMadmin",
+                "copyToList": "${datatypes.mail_cc.mail_cc}\"",
+                "subject": "${datatypes.mail_content.mail_content}\"",
+                "body": "${datatypes.mail_box.mail_box}\"",
+                "warning": false,
+                "error": false
+              }
+            }
+          ],
+          "sequence": {
+            "0": "emailnot611c76b5"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}

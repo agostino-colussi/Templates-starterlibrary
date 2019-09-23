@@ -1,0 +1,93 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "SERV_on_default",
+      "description": "",
+      "image": "serviceicon_1.svg",
+      "category": "pippo",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "camuser1@localtest.com"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [],
+        "flow": {
+          "conditions": [],
+          "templates": [
+            {
+              "TMax Amazon EC2 Virtual Server with SSH key": {
+                "title": "TMax Amazon EC2 Virtual Server with SSH key_6859fd",
+                "template_name": "TMax Amazon EC2 Virtual Server with SSH key",
+                "version": "v1.0.0",
+                "id": "tmaxamaze7fff1bc",
+                "template_type": "Terraform",
+                "template_content_type": "Amazon EC2",
+                "template_provider": "Amazon EC2",
+                "instance_name": "",
+                "cloud_connection_name": "AWS-tm",
+                "template_data_objects": {},
+                "template_params": {
+                  "aws_region": "us-east-1",
+                  "vpc_name_tag": "CAMVPC",
+                  "subnet_name": "CAM",
+                  "aws_image_size": "t2.small",
+                  "public_ssh_key_name": "TM-key-666",
+                  "public_ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3V3nO+50zZnZjFRcAXcQDHPZutSGLdhWWwbgVdyLtYA+s/Qq4xd4lAWJwD7uLNbHgzUns9yfDefrEzndIDgithrXX6QV5nDsD2PfgM1FFyrb2ABaCUien+VsauN8kRN5xWlM5yPFB0gQwziWZkk7WK5Vo2JMLq9Uv1y1CO6pd5s+oPyBvWxy0qC/WZDrftp9UH0ICKa/lrtsCQ7WQZJhqkp7c1ZPfavReWwM30EmsYBbJxpSk3zJUgdVBBK63sbwh1nGGIT6nKPPJ0A1MqYf3V7xmPc2ZeMfEb951mNC8Y896vm46DmtGHnrxqUtq+/h1csoNvlZr04GZcdExRcbT root@abba-byoos-la-test12.rch.kstart.ibm.com",
+                  "aws_image": "ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*",
+                  "aws_ami_owner_id": "099720109477"
+                },
+                "outputs": [],
+                "warning": false,
+                "current_action_key": 0
+              }
+            }
+          ],
+          "resthooks": [],
+          "notifications": [
+            {
+              "emailnotification": {
+                "title": "emailnotification_e31bdd",
+                "type": "email",
+                "receiverList": "tonino.massimi@it.ibm.com",
+                "id": "emailnot42e9df54",
+                "sender": "CAMadmin",
+                "copyToList": "",
+                "subject": "ciao",
+                "body": "hello!!",
+                "warning": false,
+                "error": false
+              }
+            }
+          ],
+          "sequence": {
+            "0": "tmaxamaze7fff1bc",
+            "1": "emailnot42e9df54"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}

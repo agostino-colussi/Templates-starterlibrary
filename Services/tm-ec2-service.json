@@ -1,0 +1,73 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "TM EC2 Service",
+      "description": "TM EC2 Service",
+      "image": "serviceicon_1.svg",
+      "category": "Tonino",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "TM EC2 Service",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "camuser2@localtest.com"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [],
+        "flow": {
+          "conditions": [],
+          "templates": [
+            {
+              "TM Amazon EC2 Virtual Server with SSH key": {
+                "title": "TM Amazon EC2 Virtual Server with SSH key_077c8e",
+                "template_name": "TM Amazon EC2 Virtual Server with SSH key",
+                "version": "master",
+                "id": "tmamazon355cd236",
+                "template_type": "Terraform",
+                "template_content_type": "Amazon EC2",
+                "template_provider": "Amazon EC2",
+                "instance_name": "",
+                "cloud_connection_name": "AWS-tm",
+                "template_data_objects": {},
+                "template_params": {
+                  "aws_region": "us-east-1",
+                  "aws_image_size": "t2.small",
+                  "aws_image": "ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*",
+                  "aws_ami_owner_id": "099720109477"
+                },
+                "outputs": [],
+                "warning": false,
+                "current_action_key": 0
+              }
+            }
+          ],
+          "resthooks": [],
+          "notifications": [],
+          "sequence": {
+            "0": "tmamazon355cd236"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}

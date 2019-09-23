@@ -1,0 +1,210 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "BAW Long Runnning V3",
+      "description": "New Service for BAW",
+      "image": "serviceicon_1.svg",
+      "category": "CloudServices",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "New Service for Business Automation Workflow.",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "camuser2@localtest.com"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [
+          {
+            "name": "ssh-key-name",
+            "label": "SSH Key Name",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "SSH Key Name",
+            "default": "ec2-tm-key-000",
+            "regex": "ec2-tm-key-\\d{3}",
+            "regexdesc": "Test a validation rule"
+          },
+          {
+            "name": "ssh-key",
+            "label": "SSH Key",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "SSH Key",
+            "default": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3V3nO+50zZnZjFRcAXcQDHPZutSGLdhWWwbgVdyLtYA+s/Qq4xd4lAWJwD7uLNbHgzUns9yfDefrEzndIDgithrXX6QV5nDsD2PfgM1FFyrb2ABaCUien+VsauN8kRN5xWlM5yPFB0gQwziWZkk7WK5Vo2JMLq9Uv1y1CO6pd5s+oPyBvWxy0qC/WZDrftp9UH0ICKa/lrtsCQ7WQZJhqkp7c1ZPfavReWwM30EmsYBbJxpSk3zJUgdVBBK63sbwh1nGGIT6nKPPJ0A1MqYf3V7xmPc2ZeMfEb951mNC8Y896vm46DmtGHnrxqUtq+/h1csoNvlZr04GZcdExRcbT root@abba-byoos-la-test12.rch.kstart.ibm.com",
+            "regex": "ssh-rsa AAAA[0-9A-Za-z+\\/]+[=]{0,3} ([^@]+@[^@]+)",
+            "regexdesc": "SSH-Key"
+          },
+          {
+            "name": "receiver",
+            "label": "Receiver",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": true,
+            "secured": false,
+            "description": "Receiver",
+            "default": "tonino.massimi@it.ibm.com",
+            "regex": "[0-9A-Za-z._%+-]+@(?:[0-9A-Za-z-]+.)+[A-Za-z]{2,}$",
+            "regexdesc": "Validate mail address"
+          },
+          {
+            "name": "carbon-copy",
+            "label": "Carbon Copy",
+            "customtype": "string",
+            "type": "string",
+            "immutable": false,
+            "hidden": false,
+            "required": false,
+            "secured": false,
+            "description": "Carbon Copy",
+            "regex": "[0-9A-Za-z._%+-]+@(?:[0-9A-Za-z-]+.)+[A-Za-z]{2,}$",
+            "regexdesc": "Validate mail address",
+            "default": ""
+          }
+        ],
+        "flow": {
+          "conditions": [
+            {
+              "decision": {
+                "title": "decision_75df6b",
+                "options": [
+                  {
+                    "case": "1",
+                    "sequence": {
+                      "0": "agoamazo589fb2bf",
+                      "1": "emailnot0b955df9"
+                    }
+                  },
+                  {
+                    "case": "0",
+                    "sequence": {
+                      "0": "emailnote582ab2e"
+                    }
+                  }
+                ],
+                "id": "decision85385caf",
+                "mapped_parameter": "${templates.approval290aa6fd.output.isApproved}",
+                "error": false,
+                "warning": false
+              }
+            }
+          ],
+          "templates": [
+            {
+              "Approval Single Virtual Machine": {
+                "title": "Approval Single Virtual Machine_eea3e8",
+                "template_name": "Approval Single Virtual Machine_25.ad2472e6-30fc-465e-8833-20c8f401f9e0_2063.12bfa55b-f0ca-4261-b7a6-5daf69cdc43a",
+                "version": "1.0",
+                "id": "approval290aa6fd",
+                "template_type": "BPM",
+                "template_content_type": "BPM",
+                "template_provider": "BPM",
+                "instance_name": "",
+                "cloud_connection_name": "BPM Connection",
+                "template_data_objects": {},
+                "template_params": {},
+                "outputs": [
+                  "isApproved",
+                  "jsonOutput"
+                ],
+                "warning": false,
+                "error": false,
+                "async_req": true,
+                "long_running_delay": "1",
+                "long_running_timeout": "1",
+                "current_action_key": 0
+              }
+            },
+            {
+              "Ago Amazon EC2 Virtual Server with SSH key": {
+                "title": "Ago Amazon EC2 Virtual Server with SSH key_b96189",
+                "template_name": "Ago Amazon EC2 Virtual Server with SSH key",
+                "version": "master",
+                "id": "agoamazo589fb2bf",
+                "template_type": "Terraform",
+                "template_content_type": "Amazon EC2",
+                "template_provider": "Amazon EC2",
+                "instance_name": "",
+                "cloud_connection_name": "AWS-tm",
+                "template_data_objects": {},
+                "template_params": {
+                  "aws_region": "us-east-1",
+                  "hostname-tag": "ec2-tm-VM",
+                  "vpc_name_tag": "CAMVPC",
+                  "subnet_name": "CAM",
+                  "aws_image_size": "t2.small",
+                  "public_ssh_key_name": "${input_parameters.ssh-key-name}",
+                  "public_ssh_key": "${input_parameters.ssh-key}",
+                  "aws_image": "ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*",
+                  "aws_ami_owner_id": "099720109477"
+                },
+                "outputs": [],
+                "current_action_key": 0
+              }
+            }
+          ],
+          "resthooks": [],
+          "notifications": [
+            {
+              "emailnotification": {
+                "title": "emailnotification_048177",
+                "type": "email",
+                "receiverList": "${input_parameters.receiver}",
+                "id": "emailnot0b955df9",
+                "sender": "CAMadmin",
+                "copyToList": "${input_parameters.carbon-copy}",
+                "subject": "VM Created Successfully",
+                "body": "Service instance name: \n${svc_instance.name}\n\nDeployed template name: ${templates.agoamazo589fb2bf.template_name}\n\nDeployment result ${templates.agoamazo589fb2bf.status}\n\nTemplate instance name: ${templates.agoamazo589fb2bf.instance_name}"
+              }
+            },
+            {
+              "emailnotification": {
+                "title": "emailnotification_d3c8fc",
+                "type": "email",
+                "receiverList": "${input_parameters.receiver}",
+                "id": "emailnote582ab2e",
+                "sender": "CAMadmin",
+                "copyToList": "${input_parameters.carbon-copy}",
+                "subject": "VM creation is declined by the Approvar",
+                "body": "Dear User, \n        we are sorry, but your request has been declined by the Approval.\n\nThe IBM Business Automation Workflow team.\n                                                                                                    Best Regards."
+              }
+            }
+          ],
+          "sequence": {
+            "0": "approval290aa6fd",
+            "1": "decision85385caf"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}

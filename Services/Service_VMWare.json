@@ -1,0 +1,89 @@
+{
+  "service": {
+    "specVersion": "v3",
+    "catalog_metadata": {
+      "name": "Service-VMWare",
+      "description": "Service VMWare",
+      "image": "serviceicon_1.svg",
+      "category": "Tonino",
+      "bullets": [],
+      "providerDisplayName": "IBM",
+      "longDescription": "To test Service VMWare ",
+      "documentationUrl": "",
+      "supportUrl": "",
+      "bindable": false,
+      "updatable": "",
+      "systemTags": false,
+      "author": "admin"
+    },
+    "tags": [],
+    "actions": [
+      {
+        "type": "provision",
+        "name": "Provision",
+        "description": "Default action for deployment of service",
+        "input_parameters": [],
+        "flow": {
+          "conditions": [],
+          "templates": [
+            {
+              "SingleVirtualMachine": {
+                "title": "SingleVirtualMachine_afcece",
+                "template_name": "SingleVirtualMachine",
+                "version": "2.3",
+                "id": "singlevidb1f8233",
+                "template_type": "Terraform",
+                "template_content_type": "VMware vSphere",
+                "template_provider": "VMware vSphere",
+                "instance_name": "",
+                "cloud_connection_name": "VMW-FIT3",
+                "template_data_objects": {},
+                "template_params": {
+                  "vm_1_name": "vm-1",
+                  "vm_1_dns_servers": [],
+                  "vm_1_dns_suffixes": [],
+                  "vm_1_domain": "",
+                  "vm_1-image": "",
+                  "vm_1_root_disk_size": "25",
+                  "vm_1_root_disk_controller_type": "scsi",
+                  "vm_1_root_disk_datastore": "",
+                  "vm_1_root_disk_type": "eager_zeroed",
+                  "vm_1_ipv4_gateway": "",
+                  "vm_1_ipv4_address": "",
+                  "vm_1_memory": "1024",
+                  "vm_1_ipv4_prefix_length": "",
+                  "vm_1_number_of_vcpu": "1",
+                  "vm_1_network_interface_label": "",
+                  "vm_1_cluster": "",
+                  "vm_1_datacenter": "",
+                  "vm_1_folder": "",
+                  "vm_1_adapter_type": "vmxnet3",
+                  "vm_1_resource_pool": ""
+                },
+                "outputs": [],
+                "warning": false,
+                "current_action_key": 0
+              }
+            }
+          ],
+          "resthooks": [],
+          "notifications": [],
+          "sequence": {
+            "0": "singlevidb1f8233"
+          },
+          "error_sequence": {}
+        },
+        "output_parameters": [],
+        "save": true
+      }
+    ],
+    "plans": [
+      {
+        "name": "Standard",
+        "description": "To deploy a Standard plan",
+        "actions": [],
+        "plan_parameters": []
+      }
+    ]
+  }
+}
