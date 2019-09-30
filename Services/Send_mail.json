@@ -2,7 +2,7 @@
   "service": {
     "specVersion": "v3",
     "catalog_metadata": {
-      "name": "Send Mail using Shared Parameters",
+      "name": "Send Mail",
       "description": "Sample test for send a mail.",
       "image": "serviceicon_1.svg",
       "category": "CloudServices",
@@ -14,7 +14,7 @@
       "bindable": false,
       "updatable": "",
       "systemTags": false,
-      "author": "admin"
+      "author": "camuser2@localtest.com"
     },
     "tags": [],
     "actions": [
@@ -32,12 +32,12 @@
               "emailnotification": {
                 "title": "emailnotification_5d57de",
                 "type": "email",
-                "receiverList": "${datatypes.mail_receiver.mail_receiver}",
+                "receiverList": "agostino.colussi@it.ibm.com",
                 "id": "emailnot611c76b5",
                 "sender": "CAMadmin",
-                "copyToList": "${datatypes.mail_cc.mail_cc}\"",
-                "subject": "${datatypes.mail_content.mail_content}\"",
-                "body": "${datatypes.mail_box.mail_box}\"",
+                "copyToList": "",
+                "subject": "test",
+                "body": "test mail",
                 "warning": false,
                 "error": false
               }
@@ -48,8 +48,7 @@
           },
           "error_sequence": {}
         },
-        "output_parameters": [],
-        "save": true
+        "output_parameters": []
       }
     ],
     "plans": [
