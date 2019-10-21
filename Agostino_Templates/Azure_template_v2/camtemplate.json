@@ -1,0 +1,13 @@
+{
+   "name": "Azure template v2",
+   "description": "Description for Azure template.",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Microsoft Azure"
+   },
+   "metadata": {
+     "bullets": []
+   }
+ }
