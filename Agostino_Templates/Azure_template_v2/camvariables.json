@@ -47,7 +47,7 @@
       "label": "Name Prefix",
       "description": "Prefix of names for Azure resources",
       "type": "string",
-      "default": "ago_singleVM",
+      "default": "ago-singleVM",
       "validation": "",
       "group_name": "Globals",
       "required": true,
@@ -103,7 +103,7 @@
     {
       "name": "Web VM Public IP",
       "label": "Web Vm Public Ip",
-      "description": null,
+      "description": "null",
       "group_name": "",
       "secured": false,
       "hidden": false,
@@ -113,7 +113,7 @@
     {
       "name": "Web VM Private IP",
       "label": "Web Vm Private Ip",
-      "description": null,
+      "description": "null",
       "group_name": "",
       "secured": false,
       "hidden": false,

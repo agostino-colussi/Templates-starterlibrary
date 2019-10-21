@@ -27,7 +27,7 @@ variable "vim_size" {
 
 variable "name_prefix" {
   description = "Prefix of names for Azure resources"
-  default     = "ago_singleVM"
+  default     = "ago-singleVM"
 }
 
 variable "admin_user" {
