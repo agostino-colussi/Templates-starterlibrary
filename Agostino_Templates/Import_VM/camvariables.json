@@ -247,6 +247,20 @@
       "hidden": false,
       "immutable": false,
       "immutable_after_create": false
+    },
+    {
+      "name": "annotation",
+      "label": "Annotation",
+      "description": "Annotation of VM.",
+      "type": "string",
+      "default": "",
+      "validation": "",
+      "group_name": "",
+      "required": true,
+      "secured": false,
+      "hidden": false,
+      "immutable": false,
+      "immutable_after_create": false
     }
   ],
   "template_output_params": [ ]
