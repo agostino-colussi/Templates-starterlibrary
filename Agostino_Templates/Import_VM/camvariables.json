@@ -255,7 +255,7 @@
       "type": "string",
       "default": "",
       "validation": "",
-      "group_name": "",
+      "group_name": "virtualmachine",
       "required": true,
       "secured": false,
       "hidden": false,
