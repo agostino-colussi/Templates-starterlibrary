@@ -42,7 +42,7 @@
       "immutable": false,
       "regex": "^(Standard_A2)$",
       "regexdesc": "Value must be Standard_A2",
-      "immutable_after_create": true
+      "immutable_after_create": false
     },
     {
       "name": "name_prefix",
