@@ -1,0 +1,13 @@
+{
+   "name": "Azure template with regex",
+   "description": "Azure template with regex",
+   "type": "userCreated",
+   "manifest": {
+     "template_type": "Terraform",
+     "template_format": "HCL",
+     "template_provider": "Microsoft Azure"
+   },
+   "metadata": {
+     "bullets": []
+   }
+ }
